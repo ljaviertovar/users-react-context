@@ -1,25 +1,27 @@
-import logo from './logo.svg';
+import Profile from './components/Profile'
+import UserList from './components/UserList'
+// importamos el context 
+import UserState from './context/User/UserState';
+
+import 'bootstrap/dist/css/bootstrap.min.css';
+
 import './App.css';
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+	return (
+		<UserState>
+			<div className="container p-4">
+				<div className="row">
+					<div className="col-md-7">
+						<UserList />
+					</div>
+					<div className="col-md-5">
+						<Profile />
+					</div>
+				</div>
+			</div>
+		</UserState>
+	);
 }
 
 export default App;
